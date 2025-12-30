@@ -336,7 +336,7 @@
         <header>
             <h1>🔐 Fhenix Private Auction Demo</h1>
             <p>See Fully Homomorphic Encryption (FHE) in Action</p>
-            <p style="font-size: 0.9em; margin-top: 5px;"></p>
+            <p style="font-size: 0.9em; margin-top: 5px;">Understanding Blockchain Privacy Through a Real Use Case</p>
         </header>
 
         <!-- Explanation Section -->
@@ -378,21 +378,36 @@
             
             <div class="bidder-section">
                 <div class="bidder-card" id="bidder1-card">
-                    <h4>👤 Bidder Alice</h4>
+                    <h4 style="display: flex; align-items: center; gap: 10px;">
+                        <img src="https://pbs.twimg.com/profile_images/1936066056570740736/-crxI217_400x400.jpg" 
+                             alt="Angie" 
+                             style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #667eea;">
+                        Bidder Angie
+                    </h4>
                     <input type="number" id="bid1" placeholder="Enter bid amount ($)" min="5000" step="100">
                     <button onclick="placeBid(1)" id="btn1">Encrypt & Submit Bid</button>
                     <div class="bid-status" id="status1"></div>
                 </div>
 
                 <div class="bidder-card" id="bidder2-card">
-                    <h4>👤 Bidder Bob</h4>
+                    <h4 style="display: flex; align-items: center; gap: 10px;">
+                        <img src="https://pbs.twimg.com/profile_images/1863363450065301504/JTyyVk20_400x400.jpg" 
+                             alt="Lior" 
+                             style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #667eea;">
+                        Bidder Lior
+                    </h4>
                     <input type="number" id="bid2" placeholder="Enter bid amount ($)" min="5000" step="100">
                     <button onclick="placeBid(2)" id="btn2">Encrypt & Submit Bid</button>
                     <div class="bid-status" id="status2"></div>
                 </div>
 
                 <div class="bidder-card" id="bidder3-card">
-                    <h4>👤 Bidder Carol</h4>
+                    <h4 style="display: flex; align-items: center; gap: 10px;">
+                        <img src="https://pbs.twimg.com/profile_images/1859238077840928768/xuJz0CTG_400x400.jpg" 
+                             alt="Itzhaki" 
+                             style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #667eea;">
+                        Bidder Itzhaki
+                    </h4>
                     <input type="number" id="bid3" placeholder="Enter bid amount ($)" min="5000" step="100">
                     <button onclick="placeBid(3)" id="btn3">Encrypt & Submit Bid</button>
                     <div class="bid-status" id="status3"></div>
@@ -455,7 +470,7 @@
                 <strong>Fully Homomorphic Encryption (FHE):</strong> You encrypt data → send it → <span class="highlight">computer performs calculations on the encrypted data directly</span> → results come out encrypted → only you can decrypt the final answer.
             </p>
             <p>
-        
+                Think of it like a worker in a sealed glove box who can manipulate objects inside without seeing them, but still produces the correct result.
             </p>
             <p>
                 <strong>In this auction:</strong> The smart contract can compare encrypted numbers, find the maximum value, and determine a winner - all without ever seeing the actual bid amounts. This is what makes Fhenix revolutionary for blockchain privacy.
@@ -464,7 +479,7 @@
 
         <footer>
             <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <img src="https://pbs.twimg.com/profile_images/1988225826291429376/PdGHvctB_400x400.jpg" 
+                <img src="https://cdn.prod.website-files.com/65ddb0d97b1f94a7ce617b30/673a4c0a51c8be66a41e3d35_risky.png" 
                      alt="Risky" 
                      style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
                 <div style="text-align: left;">
@@ -550,9 +565,9 @@
                 let maxBid = 0;
                 let winner = '';
                 const bidderNames = {
-                    'bidder1': 'Alice',
-                    'bidder2': 'Bob',
-                    'bidder3': 'Carol'
+                    'bidder1': 'Angie',
+                    'bidder2': 'Lior',
+                    'bidder3': 'Itzhaki'
                 };
                 
                 for (let bidder in bids) {
@@ -569,9 +584,9 @@
                     </div>
                     <div style="margin-top: 20px; padding: 20px; background: white; border-radius: 10px;">
                         <h4 style="color: #667eea; margin-bottom: 15px;">📊 All Bids Revealed:</h4>
-                        <p><strong>Alice bid:</strong> $${bids['bidder1']?.toLocaleString() || 'Not submitted'}</p>
-                        <p><strong>Bob bid:</strong> $${bids['bidder2']?.toLocaleString() || 'Not submitted'}</p>
-                        <p><strong>Carol bid:</strong> $${bids['bidder3']?.toLocaleString() || 'Not submitted'}</p>
+                        <p><strong>Angie bid:</strong> ${bids['bidder1']?.toLocaleString() || 'Not submitted'}</p>
+                        <p><strong>Lior bid:</strong> ${bids['bidder2']?.toLocaleString() || 'Not submitted'}</p>
+                        <p><strong>Itzhaki bid:</strong> ${bids['bidder3']?.toLocaleString() || 'Not submitted'}</p>
                         <p style="margin-top: 15px; padding: 15px; background: #f0f4ff; border-radius: 8px; font-size: 0.95em;">
                             <strong>🎯 Key Point:</strong> The smart contract knew which bid was highest WITHOUT ever decrypting them during the auction. This is the power of Fully Homomorphic Encryption!
                         </p>
